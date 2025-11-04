@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ ci ]
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -27,11 +27,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run tests
+        run: npm test
+
       - name: Build
         run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          enablement: true
 
       - name: Upload to Pages
         uses: actions/upload-pages-artifact@v3
