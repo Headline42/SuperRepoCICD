@@ -45,7 +45,7 @@ describe('Math Utils', () => {
   test('should handle edge cases', () => {
     const divide = (a, b) => b !== 0 ? a / b : 'Cannot divide by zero';
     expect(divide(10, 2)).toBe(5);
-    expect(divide(10, 0)).toBe('Cannot divi  de by zero');
+    expect(divide(10, 0)).toBe('Cannot divide by zero');
   });
 
 });
